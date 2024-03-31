@@ -1,6 +1,9 @@
 ## TransArch - A Simplified Fastfetch Configuration for Trans Users
 
 This repository exists as a means to simplify the process of configuring and using Fastfetch for newer Arch Linux users, particularly those in the transgender community. 
+## Preview
+
+![Fastfetch Preview](https://cdn.discordapp.com/attachments/1215339142381183050/1223380595527254067/image.png?ex=6619a4f7&is=66072ff7&hm=18e3307600c60e1a1e50e21d8e4375729d77005a0171363996ab14c07d4b0625&)
 
 ### Why Fastfetch?
 
