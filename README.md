@@ -49,5 +49,3 @@ fastfetch --gen-config
 ### Usage
 
 Once the configuration is set up, simply type `fastfetch` in the terminal, and enjoy the personalized system information display.
-
-Now your terminal is not only functional but also fancy! 🌈😊
