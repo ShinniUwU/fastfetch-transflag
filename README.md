@@ -1,54 +1,19 @@
-## TransArch - A Simplified Fastfetch Configuration for Trans Users
+## TransArch - Customized version
 
-This repository exists as a means to simplify the process of configuring and using Fastfetch for newer Arch Linux users, particularly those in the transgender community. 
-## Preview
+This branch is a customized version of the main branch [default_look](https://github.com/ShinniUwU/fastfetch-transflag/tree/default_look)
 
-![Fastfetch Preview](https://cdn.discordapp.com/attachments/1215339142381183050/1223380595527254067/image.png?ex=6619a4f7&is=66072ff7&hm=18e3307600c60e1a1e50e21d8e4375729d77005a0171363996ab14c07d4b0625&)
+### Preview
 
-### Why Fastfetch?
+![Fastfetch Preview](/assets/customized_preview.png)
 
-Fastfetch is chosen over Hyfetch for its instantaneous display of system information upon opening the terminal. While Hyfetch is functional, it is comparatively slower due to being coded in Python, whereas Fastfetch is coded in C, offering near-instant access to system information.
+### How do I apply this config.
 
-### How to Use
-
-#### Installation
-
-If you haven't already installed Fastfetch, you can do so using the following command:
-
-```bash
-sudo pacman -S fastfetch
-```
-
-#### Configuration
-
-1. After installing Fastfetch, generate a configuration file by running:
-
-```bash
-fastfetch --gen-config
-```
-
-2. Customize your configuration file (`config.jsonc`) according to your preferences. You can find a list of available commands [here](https://github.com/fastfetch-cli/fastfetch/blob/dev/presets/all.jsonc).
-
-3. Download the `config.jsonc` file provided in this repository.
-
-4. Place the downloaded `config.jsonc` file into the following directory:
-
-```bash
-/home/[name_of_your_pc]/.config/fastfetch/
-```
-
-5. Create a folder named `Logo` in the same directory.
-
-6. Download the image provided in this repository and place it into the `Logo` folder.
-
-7. Open the `config.jsonc` file and edit the logo path to point to the location of the downloaded image:
-
-```json
-"logo": "/home/[name_of_your_pc]/.config/fastfetch/Logo/trans_arch.png"
-```
-
-8. Save the `config.jsonc` file.
+You can follow the same instructions I gave in [default_look](https://github.com/ShinniUwU/fastfetch-transflag/tree/default_look).
 
 ### Usage
 
-Once the configuration is set up, simply type `fastfetch` in the terminal, and enjoy the personalized system information display.
+just go to your terminal and type 
+
+```bash
+fastfetch
+```

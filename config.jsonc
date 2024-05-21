@@ -1,24 +1,98 @@
 {
-  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-  "modules": [
-    "title",
-    "separator",
-    "os",
-    "host",
-    "kernel",
-    "uptime",
-    "packages",
-    "shell",
-    "display",
-    "de",
-    "wm",
-    "wmtheme",
-    "icons",
-    "terminal",
-    "cpu",
-    "gpu",
-    "memory",
-    "colors"
-  ],
-  "logo": "/home/[name_of_your_pc]/.config/fastfetch/Logo/trans_arch.png"
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/pngs/\" -name \"*.png\" | sort -R | head -1)",
+        "height": 18
+    },
+    "display": {
+        "separator": " : "
+    },
+    "modules": [
+        {
+            "type": "custom",
+            "format": "\u001b[36m    コンピューター"
+        },
+        {
+            "type": "custom",
+            "format": "┌──────────────────────────────────────────┐"
+        },
+        {
+            "type": "os",
+            "key": "   OS",
+            "keyColor": "red",
+            "format": "Arch Linux ({12})"
+        },
+        {
+            "type": "kernel",
+            "key": "   Kernel",
+            "keyColor": "red"
+        },
+        {
+            "type": "packages",
+            "key": "   Packages",
+            "keyColor": "green"
+        },
+        {
+            "type": "display",
+            "key": "   Display",
+            "keyColor": "green"
+        },
+        {
+            "type": "wm",
+            "key": "   WM",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "terminal",
+            "key": "   Terminal",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "custom",
+            "format": "└──────────────────────────────────────────┘"
+        },
+        "break",
+        {
+            "type": "title",
+            "key": "  "
+        },
+        {
+            "type": "custom",
+            "format": "┌──────────────────────────────────────────┐"
+        },
+        {
+            "type": "cpu",
+            "format": "{1}",
+            "key": "   CPU",
+            "keyColor": "blue"
+        },
+        {
+            "type": "gpu",
+            "format": "{2}",
+            "key": "   GPU",
+            "keyColor": "blue"
+        },
+        {
+            "type": "gpu",
+            "format": "{3}",
+            "key": "   GPU Driver",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "memory",
+            "key": "  ﬙ Memory",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "custom",
+            "format": "└──────────────────────────────────────────┘"
+        },
+        "break",
+        {
+            "type": "colors",
+            "paddingLeft": 2,
+            "symbol": "circle"
+        },
+        "break"
+    ]
 }
