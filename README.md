@@ -28,14 +28,6 @@ sudo pacman -S fastfetch
 
 3. Inside the `fastfetch` folder, place `config.jsonc` and the `Logo` folder.
 
-4. Open the `config.jsonc` file and edit the logo path to point to the location of the downloaded image:
-
-```json
-"logo": "/home/[name_of_your_pc]/.config/fastfetch/Logo/trans_arch.png"
-```
-
-5. Save and exit the `config.jsonc` file.
-
 ### Usage
 
 Once the configuration is set up, just type `fastfetch` in the terminal to enjoy the personalized system information display.

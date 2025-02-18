@@ -20,5 +20,5 @@
     "memory",
     "colors"
   ],
-  "logo": "/home/[name_of_your_pc]/.config/fastfetch/Logo/trans_arch.png"
+  "logo": "~/.config/fastfetch/Logo/trans_arch.png"
 }
