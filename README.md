@@ -24,6 +24,8 @@ Then run the picker script from the repo root:
 
 It lets you preview both looks live in your terminal and installs whichever one you pick into `~/.config/fastfetch/`.
 
+The script auto-detects the best way to render the logo in *your* terminal (Kitty, Konsole, WezTerm, iTerm2, etc.), asks you to confirm the image actually showed up, and remembers that choice (in `~/.cache/transarch-fastfetch-logo-type`) so you never have to fiddle with flags again. If your terminal doesn't support inline images at all, it falls back to a plain-text logo automatically — everything else (OS, CPU, GPU, etc.) still displays correctly either way. No network access, no telemetry, nothing installed without asking first.
+
 ### The Two Looks
 
 #### 1. Default look
@@ -56,5 +58,4 @@ Once the configuration is set up, just type `fastfetch` in the terminal to enjoy
 
 ### Known Bugs
 
-- Some terminals may not render the PNG logo correctly. Compatibility has been confirmed with Kitty and Konsole; other terminals may exhibit issues.
-- **If you see raw text like `PNG` or garbled characters where the logo should be**, that means your terminal doesn't support inline image rendering (Kitty graphics protocol / Sixel). This isn't a broken config — fastfetch will still show all your system info correctly, just with a plain-text logo instead of the flag image. Try Kitty, Konsole, WezTerm, or iTerm2 if you want the full image logo.
+- If you set up a look manually (not via `choose-look.sh`) and see raw text like `PNG` or garbled characters where the logo should be, your terminal doesn't support inline image rendering. This isn't a broken config — fastfetch still shows all your system info correctly, just with a plain-text logo instead of the flag image. Using `choose-look.sh` avoids this by testing render modes for you before installing anything.
