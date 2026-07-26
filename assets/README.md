@@ -20,7 +20,11 @@ If you find the `assets` folder included in your Fastfetch config folder (e.g., 
 Ensure that your Fastfetch configuration points to the correct logo path in your system. For example:
 
 ```json
-"logo": "~/.config/fastfetch/Logo/trans_arch.png"
+"logo": "~/.config/fastfetch/logos/trans_default.png"
 ```
 
-Both the default and customized looks use this same logo file.
+or, for the customized look:
+
+```json
+"logo": "~/.config/fastfetch/logos/trans_customized.png"
+```

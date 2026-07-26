@@ -31,24 +31,24 @@ It lets you preview both looks live in your terminal and installs whichever one 
 ![Default Preview](/assets/fastfetch_preview.png)
 
 - Config: `config.jsonc`
-- Logo: `Logo/trans_arch.png`
+- Logo: `logos/trans_default.png`
 
 Manual setup:
 
 1. Create a folder named `fastfetch` in `~/.config/`.
-2. Inside it, place `config.jsonc` and the `Logo` folder.
+2. Inside it, place `config.jsonc` and the `logos` folder.
 
 #### 2. Customized look
 
 ![Customized Preview](/assets/customized_preview.png)
 
 - Config: `config-customized.jsonc`
-- Logo: `Logo/trans_arch.png`
+- Logo: `logos/trans_customized.png`
 
 Manual setup:
 
 1. Create a folder named `fastfetch` in `~/.config/`.
-2. Copy `config-customized.jsonc` to `~/.config/fastfetch/config.jsonc` and place the `Logo` folder alongside it.
+2. Copy `config-customized.jsonc` to `~/.config/fastfetch/config.jsonc` and place the `logos` folder alongside it.
 
 ### Usage
 

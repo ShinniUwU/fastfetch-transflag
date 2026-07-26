@@ -35,13 +35,14 @@ ensure_fastfetch() {
 preview() {
     local label="$1"
     local config="$2"
+    local logo="$3"
 
     clear
     echo "${BOLD}${CYAN}== ${label} ==${RESET}"
     echo
     # Override the logo with the repo copy so this renders correctly even
     # before anything has been installed to ~/.config/fastfetch.
-    fastfetch --config "$config" --file "$SCRIPT_DIR/Logo/trans_arch.png"
+    fastfetch --config "$config" --file "$SCRIPT_DIR/logos/$logo"
     echo
     echo "${YELLOW}Note:${RESET} if you saw raw text like 'PNG' or garbled characters"
     echo "above instead of the flag logo, your terminal doesn't support inline"
@@ -53,16 +54,16 @@ preview() {
 }
 
 install_default() {
-    mkdir -p "$TARGET_DIR/Logo"
+    mkdir -p "$TARGET_DIR/logos"
     cp "$SCRIPT_DIR/config.jsonc" "$TARGET_DIR/config.jsonc"
-    cp "$SCRIPT_DIR/Logo/trans_arch.png" "$TARGET_DIR/Logo/trans_arch.png"
+    cp "$SCRIPT_DIR/logos/trans_default.png" "$TARGET_DIR/logos/trans_default.png"
     echo "${GREEN}Default look installed to ${TARGET_DIR}${RESET}"
 }
 
 install_customized() {
-    mkdir -p "$TARGET_DIR/Logo"
+    mkdir -p "$TARGET_DIR/logos"
     cp "$SCRIPT_DIR/config-customized.jsonc" "$TARGET_DIR/config.jsonc"
-    cp "$SCRIPT_DIR/Logo/trans_arch.png" "$TARGET_DIR/Logo/trans_arch.png"
+    cp "$SCRIPT_DIR/logos/trans_customized.png" "$TARGET_DIR/logos/trans_customized.png"
     echo "${GREEN}Customized look installed to ${TARGET_DIR}${RESET}"
 }
 
@@ -80,8 +81,8 @@ main_menu() {
         read -r -p "Choice [1-5]: " choice
 
         case "$choice" in
-            1) preview "Default look" "$SCRIPT_DIR/config.jsonc" ;;
-            2) preview "Customized look" "$SCRIPT_DIR/config-customized.jsonc" ;;
+            1) preview "Default look" "$SCRIPT_DIR/config.jsonc" "trans_default.png" ;;
+            2) preview "Customized look" "$SCRIPT_DIR/config-customized.jsonc" "trans_customized.png" ;;
             3)
                 install_default
                 read -r -p "Press Enter to continue..." _
