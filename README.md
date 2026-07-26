@@ -2,17 +2,13 @@
 
 This repository aims to streamline the process of configuring and utilizing Fastfetch for new Arch Linux users, specifically those within the transgender community.
 
-### Preview
-
-![Fastfetch Preview](/assets/fastfetch_preview.png)
+This repo now ships **two looks** side by side, plus a script to preview and pick one interactively.
 
 ### Why Fastfetch?
 
 Fastfetch is preferred over Hyfetch for its immediate display of system information upon launching the terminal. While Hyfetch is functional, its execution speed is comparatively slower due to being written in Python. In contrast, Fastfetch, coded in C, provides almost instant access to system details.
 
-### How to Use
-
-#### Installation
+### Quick Start (recommended)
 
 If Fastfetch is not yet installed, execute the following command:
 
@@ -20,21 +16,43 @@ If Fastfetch is not yet installed, execute the following command:
 sudo pacman -S fastfetch
 ```
 
-#### Configuration
+Then run the picker script from the repo root:
 
-1. Upon installing Fastfetch, no additional setup is needed.
+```bash
+./choose-look.sh
+```
 
-2. Simply create a folder named `fastfetch` in `~/.config/`.
+It lets you preview both looks live in your terminal and installs whichever one you pick into `~/.config/fastfetch/`.
 
-3. Inside the `fastfetch` folder, place `config.jsonc` and the `Logo` folder.
+### The Two Looks
+
+#### 1. Default look
+
+![Default Preview](/assets/fastfetch_preview.png)
+
+- Config: `config.jsonc`
+- Logo: `Logo/trans_arch.png`
+
+Manual setup:
+
+1. Create a folder named `fastfetch` in `~/.config/`.
+2. Inside it, place `config.jsonc` and the `Logo` folder.
+
+#### 2. Customized look
+
+![Customized Preview](/assets/customized_preview.png)
+
+- Config: `config-customized.jsonc`
+- Logo(s): `pngs/` (a random PNG from this folder is picked on every launch)
+
+Manual setup:
+
+1. Create a folder named `fastfetch` in `~/.config/`.
+2. Copy `config-customized.jsonc` to `~/.config/fastfetch/config.jsonc` and place the `pngs` folder alongside it.
 
 ### Usage
 
 Once the configuration is set up, just type `fastfetch` in the terminal to enjoy the personalized system information display.
-
-### Check out Customized Versions
-
-- **Customized Branch:** Explore my [customized](https://github.com/ShinniUwU/fastfetch-transflag/tree/customized) branch for an enhanced visual experience.
 
 ### Known Bugs
 

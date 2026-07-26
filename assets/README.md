@@ -4,7 +4,8 @@ This folder contains visual assets to demonstrate how the Fastfetch configuratio
 
 ## Contents
 
-- `fastfetch_preview.png`: A screenshot showing how Fastfetch displays system information with the provided configuration.
+- `fastfetch_preview.png`: A screenshot showing the default look (`config.jsonc`).
+- `customized_preview.png`: A screenshot showing the customized look (`config-customized.jsonc`).
 
 ## Purpose
 
@@ -20,3 +21,13 @@ Ensure that your Fastfetch configuration points to the correct logo path in your
 
 ```json
 "logo": "~/.config/fastfetch/Logo/trans_arch.png"
+```
+
+or, for the customized look:
+
+```json
+"logo": {
+    "source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/pngs/\" -name \"*.png\" | sort -R | head -1)",
+    "height": 18
+}
+```
