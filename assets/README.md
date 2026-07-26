@@ -23,11 +23,4 @@ Ensure that your Fastfetch configuration points to the correct logo path in your
 "logo": "~/.config/fastfetch/Logo/trans_arch.png"
 ```
 
-or, for the customized look:
-
-```json
-"logo": {
-    "source": "$(find \"${XDG_CONFIG_HOME:-$HOME/.config}/fastfetch/pngs/\" -name \"*.png\" | sort -R | head -1)",
-    "height": 18
-}
-```
+Both the default and customized looks use this same logo file.

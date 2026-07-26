@@ -39,8 +39,9 @@ preview() {
     clear
     echo "${BOLD}${CYAN}== ${label} ==${RESET}"
     echo
-    # Run from the repo dir so relative logo paths resolve correctly.
-    (cd "$SCRIPT_DIR" && fastfetch --config "$config")
+    # Override the logo with the repo copy so this renders correctly even
+    # before anything has been installed to ~/.config/fastfetch.
+    fastfetch --config "$config" --file "$SCRIPT_DIR/Logo/trans_arch.png"
     echo
     read -r -p "Press Enter to continue..." _
 }
@@ -53,9 +54,9 @@ install_default() {
 }
 
 install_customized() {
-    mkdir -p "$TARGET_DIR/pngs"
+    mkdir -p "$TARGET_DIR/Logo"
     cp "$SCRIPT_DIR/config-customized.jsonc" "$TARGET_DIR/config.jsonc"
-    cp "$SCRIPT_DIR"/pngs/*.png "$TARGET_DIR/pngs/"
+    cp "$SCRIPT_DIR/Logo/trans_arch.png" "$TARGET_DIR/Logo/trans_arch.png"
     echo "${GREEN}Customized look installed to ${TARGET_DIR}${RESET}"
 }
 

@@ -43,12 +43,12 @@ Manual setup:
 ![Customized Preview](/assets/customized_preview.png)
 
 - Config: `config-customized.jsonc`
-- Logo(s): `pngs/` (a random PNG from this folder is picked on every launch)
+- Logo: `Logo/trans_arch.png`
 
 Manual setup:
 
 1. Create a folder named `fastfetch` in `~/.config/`.
-2. Copy `config-customized.jsonc` to `~/.config/fastfetch/config.jsonc` and place the `pngs` folder alongside it.
+2. Copy `config-customized.jsonc` to `~/.config/fastfetch/config.jsonc` and place the `Logo` folder alongside it.
 
 ### Usage
 
