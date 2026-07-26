@@ -57,3 +57,4 @@ Once the configuration is set up, just type `fastfetch` in the terminal to enjoy
 ### Known Bugs
 
 - Some terminals may not render the PNG logo correctly. Compatibility has been confirmed with Kitty and Konsole; other terminals may exhibit issues.
+- **If you see raw text like `PNG` or garbled characters where the logo should be**, that means your terminal doesn't support inline image rendering (Kitty graphics protocol / Sixel). This isn't a broken config — fastfetch will still show all your system info correctly, just with a plain-text logo instead of the flag image. Try Kitty, Konsole, WezTerm, or iTerm2 if you want the full image logo.

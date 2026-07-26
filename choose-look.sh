@@ -43,6 +43,12 @@ preview() {
     # before anything has been installed to ~/.config/fastfetch.
     fastfetch --config "$config" --file "$SCRIPT_DIR/Logo/trans_arch.png"
     echo
+    echo "${YELLOW}Note:${RESET} if you saw raw text like 'PNG' or garbled characters"
+    echo "above instead of the flag logo, your terminal doesn't support inline"
+    echo "image rendering (Kitty graphics protocol / Sixel). Try Kitty, Konsole,"
+    echo "WezTerm, or iTerm2 for the full look; other terminals still work fine,"
+    echo "they'll just show a plain-text logo instead."
+    echo
     read -r -p "Press Enter to continue..." _
 }
 
