@@ -1,6 +1,6 @@
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-    "logo": "~/.config/fastfetch/logos/trans_customized.png",
+    "logo": "~/.config/fastfetch/logos/customized.png",
     "display": {
         "separator": " : "
     },
