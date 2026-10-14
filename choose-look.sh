@@ -171,6 +171,7 @@ valid_look() {
 
 install_look() {
     local name="$1"
+    # shellcheck disable=SC2088 # literal ~ is intended, fastfetch expands it
     local target_logo_path="~/.config/fastfetch/logos/$name.png"
 
     load_or_guess_logo_type
