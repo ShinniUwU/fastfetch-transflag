@@ -1,0 +1,21 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: shellcheck
+        run: shellcheck choose-look.sh
+      - name: every look has config and logo
+        run: |
+          for d in looks/*/; do
+            test -f "$d/config.jsonc" && test -f "$d/logo.png" || { echo "incomplete look: $d"; exit 1; }
+            name=$(basename "$d")
+            grep -q "\"logo\": \"~/.config/fastfetch/logos/$name.png\"" "$d/config.jsonc" || { echo "bad logo path in $d"; exit 1; }
+          done
+      - name: installer smoke test
+        run: |
+          export XDG_CONFIG_HOME=$(mktemp -d) XDG_CACHE_HOME=$(mktemp -d)
+          ./choose-look.sh --list
+          for n in $(./choose-look.sh --list); do ./choose-look.sh --look "$n"; done

@@ -22,40 +22,46 @@ Then run the picker script from the repo root:
 ./choose-look.sh
 ```
 
-It lets you preview both looks live in your terminal and installs whichever one you pick into `~/.config/fastfetch/`.
+It lets you preview the looks live in your terminal and installs whichever one you pick into `~/.config/fastfetch/`. Your existing `config.jsonc` is backed up first as `config.jsonc.bak-<timestamp>`.
+
+Skip the menu with flags:
+
+```bash
+./choose-look.sh --list            # show available looks
+./choose-look.sh --look customized # install one, no prompts
+./choose-look.sh --uninstall       # remove the installed config and logos
+```
 
 The script auto-detects the best way to render the logo in *your* terminal (Kitty, Konsole, WezTerm, iTerm2, etc.), asks you to confirm the image actually showed up, and remembers that choice (in `~/.cache/transarch-fastfetch-logo-type`) so you never have to fiddle with flags again. If your terminal doesn't support inline images at all, it falls back to a plain-text logo automatically, and everything else (OS, CPU, GPU, etc.) still displays correctly either way. No network access, no telemetry, nothing installed without asking first.
 
-### The Two Looks
+### The Looks
 
-#### 1. Default look
+Each look lives in `looks/<name>/` as a `config.jsonc` and a `logo.png`.
 
-![Default Preview](/assets/fastfetch_preview.png)
+#### default
 
-- Config: `config.jsonc`
-- Logo: `logos/trans_default.png`
+![Default Preview](/assets/default.png)
 
-Manual setup:
+#### customized
 
-1. Create a folder named `fastfetch` in `~/.config/`.
-2. Inside it, place `config.jsonc` and the `logos` folder.
+![Customized Preview](/assets/customized.png)
 
-#### 2. Customized look
+### Manual setup
 
-![Customized Preview](/assets/customized_preview.png)
+Prefer not to run the script? Copy a look by hand:
 
-- Config: `config-customized.jsonc`
-- Logo: `logos/trans_customized.png`
-
-Manual setup:
-
-1. Create a folder named `fastfetch` in `~/.config/`.
-2. Copy `config-customized.jsonc` to `~/.config/fastfetch/config.jsonc` and place the `logos` folder alongside it.
+1. `mkdir -p ~/.config/fastfetch/logos`
+2. `cp looks/<name>/config.jsonc ~/.config/fastfetch/config.jsonc`
+3. `cp looks/<name>/logo.png ~/.config/fastfetch/logos/<name>.png`
 
 ### Usage
 
 Once the configuration is set up, just type `fastfetch` in the terminal to enjoy the personalized system information display.
 
-### Known Bugs
+### Contributing
+
+Want to add a look? See [CONTRIBUTING.md](CONTRIBUTING.md). It takes one folder.
+
+### Troubleshooting
 
 - If you set up a look manually (not via `choose-look.sh`) and see raw text like `PNG` or garbled characters where the logo should be, your terminal doesn't support inline image rendering. This isn't a broken config, fastfetch still shows all your system info correctly, just with a plain-text logo instead of the flag image. Using `choose-look.sh` avoids this by testing render modes for you before installing anything.
